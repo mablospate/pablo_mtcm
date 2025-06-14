@@ -1,0 +1,133 @@
+---
+import "../stylesheets/styles.css"; // Tu CSS global, si quieres
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title ? `${title} | Mi sitio` : 'Mi sitio'}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <style>
+      body      { border: 8px solid #99f6e4; min-height: 100vh; }
+      header    { background: #fbbf24; color: #222; padding: 1rem; border-bottom: 5px solid #b91c1c; }
+      main      { border: 4px dashed #3b82f6; margin: 2rem; padding: 2rem; background: #fff7ed; }
+      footer    { background: #22d3ee; color: #222; padding: 1rem; border-top: 5px solid #2563eb; }
+      .markdown {
+        font-family: 'Merriweather';
+        font-size: 20px;
+        font-weight: 900;
+        border: 2px dotted #d946ef;
+        padding: 1rem;
+        background: #faf5ff;
+        h1 {
+          /* Encabezado principal */
+          font-weight: 100;
+          font-size: 80px;
+          font-style: italic;
+          border-bottom: 5px solid #b91c1c;
+          margin-bottom: 0.25em;
+        }
+        h2 {
+          /* Segundo encabezado */
+        }
+        h3 {
+          /* Tercer encabezado */
+        }
+        h4 {
+          /* Cuarto encabezado */
+        }
+        h5 {
+          /* Quinto encabezado */
+        }
+        h6 {
+          /* Sexto encabezado */
+        }
+        p {
+          /* Párrafos */
+        }
+        a {
+          /* Enlaces */
+        }
+        strong {
+          /* Negrita */
+        }
+        em {
+          /* Cursiva */
+        }
+        blockquote {
+          /* Citas */
+        }
+        ul {
+          /* Listas sin ordenar */
+        }
+        ol {
+          /* Listas ordenadas */
+        }
+        li {
+          /* Elementos de lista */
+        }
+        code {
+          /* Código en línea */
+        }
+        pre {
+          /* Bloques de código */
+        }
+        img {
+          /* Imágenes */
+        }
+        hr {
+          /* Líneas horizontales */
+        }
+        table {
+          /* Tablas */
+        }
+        thead {
+          /* Encabezado de tabla */
+        }
+        tbody {
+          /* Cuerpo de tabla */
+        }
+        tr {
+          /* Fila de tabla */
+        }
+        th {
+          /* Celda de encabezado de tabla */
+        }
+        td {
+          /* Celda de tabla */
+        }
+        del {
+          /* Texto tachado */
+        }
+        sup {
+          /* Superíndice */
+        }
+        sub {
+          /* Subíndice */
+        }
+      }
+    </style>
+    <slot name="head" />
+  </head>
+  <body>
+    <header>
+      <h1 class="font-medium">HEADER DEL LAYOUT</h1>
+      <p>(Aquí va tu menú, branding, etc)</p>
+    </header>
+    <main>
+        <h2 style="color:#be185d;">MAIN DEL LAYOUT</h2>
+        <h3 class="font-bold"></h3>
+        <div class="markdown">
+        <slot />
+        </div>
+    </main>
+    <footer>
+      <strong>FOOTER DEL LAYOUT</strong>
+      <p>(Aquí puedes poner info legal, enlaces, etc)</p>
+    </footer>
+  </body>
+</html>
